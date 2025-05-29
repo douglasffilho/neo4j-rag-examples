@@ -1,0 +1,8 @@
+./bin
+./dist
+./build
+./coverage
+./logs
+./tmp
+./.env
+/node_modules
