@@ -1,18 +1,11 @@
-import { env } from 'process';
-import { coalesceResponse, createBearerAuthorizationInstance } from './lib/axios';
-import { debug } from './lib/debug';
+import { answerQuestion, dogsVectorStore, init } from './lib/neo4j';
 
-export default async function action() {
-  const ollamaAPI = await createBearerAuthorizationInstance(env.OLLAMA_HOST, env.OLLAMA_TOKEN);
+export default async function run() {
+  await init();
 
-  return ollamaAPI
-    .post('/v1/chat/completions', {
-      model: 'deepseek-coder:1.3b',
-      temperature: 0.7,
-      messages: [{ role: 'user', content: 'Make a node.js "hello world" app using no frameworks' }]
-    })
-    .then(coalesceResponse)
-    .then(debug('chat response'));
+  const response = await answerQuestion(dogsVectorStore, 'Which dog is the most aggressive?');
+  
+  console.log(response);
 }
 
-action();
+run();
