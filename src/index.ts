@@ -1,6 +1,6 @@
 import { nlp } from './lib/models';
 import { getDogsVectorStore, init } from './lib/neo4j';
-import prompts from './lib/prompts';
+import prompts from './domains/dogs/prompts';
 
 export default async function run() {
   await init();
