@@ -3,7 +3,7 @@
   "exclude": ["node_modules", "bin", "infra"],
   "compilerOptions": {
     "composite": true,
-    "module": "CommonJS",
+    "module": "Preserve",
     "moduleResolution": "Node",
     "target": "ES2022",
     "declaration": true,

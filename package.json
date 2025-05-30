@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf ./node_modules ./bin",
-    "dev": "NODEENV=dev node --import=tsx --env-file=.env --experimental-transform-types --trace-warnings --disable-warning=ExperimentalWarning src/index.ts",
+    "dev": "NODEENV=dev node --import=tsx --env-file=.env.dev --experimental-transform-types --trace-warnings --disable-warning=ExperimentalWarning src/index.ts",
     "lint:fix": "npx eslint . --fix && npx prettier --write .",
     "test:staged": "npx vitest related --run"
   },
@@ -16,7 +16,8 @@
   "dependencies": {
     "@langchain/community": "^0.3.45",
     "@langchain/ollama": "^0.2.0",
-    "axios": "^1.8.4"
+    "axios": "^1.8.4",
+    "neo4j-driver": "^5.28.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
