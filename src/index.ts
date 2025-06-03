@@ -1,10 +1,15 @@
-import { answerQuestionAboutDogs } from './domains/dogs';
-import { init } from './domains/dogs/neo4j';
+import { serve } from '@hono/node-server';
+import app from './app';
+import { init } from './domains/dogs/lib/neo4j';
 
-export default async function run() {
-  await init();
+await init();
 
-  await answerQuestionAboutDogs('Which dog is bigger?');
-}
+const port = Number(process.env.PORT ?? '8080');
 
-run();
+serve({ fetch: app.fetch, port }, () => {
+  console.log(`🚀 Server is running on port ${port}`)
+  console.log(`🔍 Environment: ${process.env.NODE_ENV}`)
+  console.log(`🔍 OpenAPI: http://localhost:${port}/reference`)
+})
+
+export default app;

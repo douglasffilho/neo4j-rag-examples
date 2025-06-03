@@ -1,7 +1,7 @@
 import { ChatPromptTemplate } from '@langchain/core/prompts';
 import { readFile } from 'fs/promises';
 
-const nlpToDogsAnswer = await readFile('./src/domains/dogs/prompts/nlpToDogsAnswer.md', 'utf8');
+const nlpToDogsAnswer = await readFile('./src/domains/dogs/data/prompts/nlpToDogsAnswer.md', 'utf8');
 
 export default {
   async nlpToDogsAnswer(context: string, question: string): Promise<string> {

@@ -2,7 +2,6 @@ import { embedings } from '#src/lib/models';
 import { Neo4jVectorStore } from '@langchain/community/vectorstores/neo4j_vector';
 import 'dotenv/config';
 import { readFile } from 'fs/promises';
-import { join } from 'path';
 
 // ✅ Load Neo4j credentials from environment variables
 const config = {
@@ -30,7 +29,7 @@ export async function init() {
   const searchResults = await dogsVectorStore.query('MATCH (n:Chunk) RETURN n.text LIMIT 1');
   if (searchResults.length === 0) {
     console.log('🔍 Reading Documents');
-    const documents = (await readFile(join('src', 'domains', 'dogs', 'embeddings.txt'), 'utf8'))
+    const documents = (await readFile('./src/domains/dogs/data/embeddings.txt', 'utf8'))
       .split('\n\n')
       .map((sentence) => ({
         pageContent: sentence.trim().replaceAll('\n', ''),
