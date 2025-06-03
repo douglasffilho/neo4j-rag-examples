@@ -1,13 +1,16 @@
+/* eslint no-console: off */
+/* eslint  @typescript-eslint/no-explicit-any: off */
+
 import { embedings } from '#src/lib/models';
 import { Neo4jVectorStore } from '@langchain/community/vectorstores/neo4j_vector';
-import 'dotenv/config';
 import { readFile } from 'fs/promises';
+import { env } from 'process';
 
 // ✅ Load Neo4j credentials from environment variables
 const config = {
-  url: process.env.NEO4J_HOST,
-  username: process.env.NEO4J_USERNAME,
-  password: process.env.NEO4J_PASSWORD,
+  url: env.NEO4J_HOST,
+  username: env.NEO4J_USERNAME,
+  password: env.NEO4J_PASSWORD,
   textNodeProperties: ['text'],
   searchType: 'vector',
   nodeLabel: 'Chunk',

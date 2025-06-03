@@ -1,1 +1,1 @@
-export default { extends: ['@benup-dev/benup-config-commitlint'] };
+export default { extends: ['@commitlint/config-conventional'] };

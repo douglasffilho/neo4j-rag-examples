@@ -1,12 +1,12 @@
-import { z } from "zod"
+import { z } from 'zod';
 
 export const AnswerQuestionAboutDogsSchema = z.object({
-    question: z.string()
-})
+  question: z.string()
+});
 
 export const AnswerQuestionAboutDogsResponseSchema = z.object({
-    answer: z.string()
-})
+  answer: z.string()
+});
 
-export type AnswerQuestionAboutDogsRequest = z.infer<typeof AnswerQuestionAboutDogsSchema>
-export type AnswerQuestionAboutDogsResponse = z.infer<typeof AnswerQuestionAboutDogsResponseSchema>
+export type AnswerQuestionAboutDogsRequest = z.infer<typeof AnswerQuestionAboutDogsSchema>;
+export type AnswerQuestionAboutDogsResponse = z.infer<typeof AnswerQuestionAboutDogsResponseSchema>;

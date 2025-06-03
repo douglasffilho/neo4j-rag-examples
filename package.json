@@ -4,6 +4,7 @@
   "main": "bin/src/index.js",
   "type": "module",
   "scripts": {
+    "preinstall": "husky",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf ./node_modules ./bin",
     "dev": "NODE_ENV=dev node --import=tsx --env-file=.env.dev --experimental-transform-types --trace-warnings --disable-warning=ExperimentalWarning src/index.ts",
@@ -28,6 +29,8 @@
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@types/node": "^22.13.10",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-n": "^17.19.0",
     "git-cz": "^4.9.0",
     "husky": "^9.1.6",
     "lint-staged": "^15.5.0",

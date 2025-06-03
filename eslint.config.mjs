@@ -14,7 +14,8 @@ export default tseslint.config(
         'no-console': ['error', { allow: ['warn', 'error'] }],
         'n/no-process-env': ['error'],
         'n/no-unsupported-features/node-builtins': ['warn'],
-        'n/no-missing-import': [0]
+        'n/no-missing-import': [0],
+        'n/no-extraneous-import': ['error', { allowModules: ['@langchain/core'] }]
       }
     },
     prettier,
