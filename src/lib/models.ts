@@ -2,7 +2,7 @@ import { ChatOllama, OllamaEmbeddings } from '@langchain/ollama';
 
 // ✅ Initialize Ollama Embeddings Model
 export const embedings = new OllamaEmbeddings({
-  model: 'nomic-embed-text',
+  model: process.env.OLLAMA_EMBEDDINGS_MODEL,
   baseUrl: process.env.OPENAI_BASE_URL
 });
 
@@ -10,6 +10,6 @@ export const embedings = new OllamaEmbeddings({
 export const nlp = new ChatOllama({
   temperature: 0,
   maxRetries: 2,
-  model: process.env.OLLAMA_NPL_MODEL,
+  model: process.env.OLLAMA_NLP_MODEL,
   baseUrl: process.env.OLLAMA_BASE_URL
 });

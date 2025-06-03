@@ -7,7 +7,7 @@ export default async function action() {
 
   return ollamaAPI
     .post('/chat/completions', {
-      model: 'deepseek-coder:1.3b',
+      model: env.OLLAMA_CODER_MODEL,
       temperature: 0.7,
       messages: [{ role: 'user', content: 'Make a node.js "hello world" app using no frameworks' }]
     })
