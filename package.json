@@ -20,7 +20,7 @@
     "@hono/zod-openapi": "^0.19.8",
     "@langchain/community": "^0.3.45",
     "@langchain/ollama": "^0.2.0",
-    "axios": "^1.8.4",
+    "axios": "^1.12.2",
     "hono": "^4.7.11",
     "neo4j-driver": "^5.28.1",
     "zod": "^3.25.49"
